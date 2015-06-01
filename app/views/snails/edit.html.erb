@@ -1,34 +1,42 @@
-<h1>Sign Up</h1>
-<%= form_for @snail do |f| %>
+<h1>Edit Snail</h1>
+<%= form_for @snail do |f| %> 
+
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+
   <div>
     <%= f.label :location %>
     <%= f.text_field :location %>
   </div>
+
   <div>
     <%= f.label :gender %>
     <%= f.text_field :gender %>
   </div>
+
   <div>
     <%= f.label :spirit_animal%>
     <%= f.text_field :spirit %>
   </div>
+
   <div>
     <%= f.label :greatest_accomplishment%>
     <%= f.text_field :greatest %> 
   </div>
+
   <div>
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
+
   <div>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
-  <div>
-    <%= f.submit %>
-  </div>
+
+   <%= f.submit "Submit these changes!" %>
+   <%= link_to "Back to the list!", snails_path %>
+   
 <% end %>

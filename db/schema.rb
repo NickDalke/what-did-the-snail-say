@@ -11,7 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529191117) do
+ActiveRecord::Schema.define(version: 20150601215733) do
+
+  create_table "apple_pears", force: true do |t|
+    t.integer  "bean_id"
+    t.integer  "pastry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "apple_pears", ["bean_id"], name: "index_apple_pears_on_bean_id"
+  add_index "apple_pears", ["pastry_id"], name: "index_apple_pears_on_pastry_id"
+
+  create_table "banana_oranges", force: true do |t|
+    t.integer  "bean_id"
+    t.integer  "pastry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "banana_oranges", ["bean_id"], name: "index_banana_oranges_on_bean_id"
+  add_index "banana_oranges", ["pastry_id"], name: "index_banana_oranges_on_pastry_id"
+
+  create_table "cranberries_pineapples", force: true do |t|
+    t.integer  "bean_id"
+    t.integer  "pastry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cranberries_pineapples", ["bean_id"], name: "index_cranberries_pineapples_on_bean_id"
+  add_index "cranberries_pineapples", ["pastry_id"], name: "index_cranberries_pineapples_on_pastry_id"
 
   create_table "snails", force: true do |t|
     t.string   "name"

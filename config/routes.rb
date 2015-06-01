@@ -2,9 +2,12 @@ Rails.application.routes.draw do
 
     
 
-    get "snails" => "snails#index"
-    get "snails/new" => "snails#new"
+    get "snails" => "snails#index", as: :snails
+    get "snails/new" => "snails#new", as: :new_snail
     post "snails" => "snails#create"
+    get "snail/:id" => "snails#show", as: :snail
+    get "snails/:id/edit" => "snails#edit", as: :edit_snail
+    patch "snails/:id" => "snails#update"
     get '/login'     => 'sessions#new'
     post '/login'    => 'sessions#create'
     delete '/logout' => 'sessions#destroy'
