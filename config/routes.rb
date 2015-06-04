@@ -1,16 +1,28 @@
 Rails.application.routes.draw do
 
-    
+    get "/snails" => "snails#index", as: :snails
+    post "/snails" => "snails#create"
+    get "/snails/new" => "snails#new", as: :new_snail
+    get "/snails/:id/edit" => "snails#edit", as: :edit_snail
+    get "/snails/:id" => "snails#show",  as: :snail
+    patch "/snails/:id" => "snails#update"
+    put "/snails/:id" => "snails#update"
+    delete "/snails/:id" => "snails#destroy"
+    get "/login" => "sessions#new",  as: :login
+    post "/login" => "sessions#create"  
+    delete "/logout" => "sessions#destroy", as: :logout
 
-    get "snails" => "snails#index", as: :snails
-    get "snails/new" => "snails#new", as: :new_snail
-    post "snails" => "snails#create"
-    get "snail/:id" => "snails#show", as: :snail
-    get "snails/:id/edit" => "snails#edit", as: :edit_snail
-    patch "snails/:id" => "snails#update"
-    get '/login'     => 'sessions#new'
-    post '/login'    => 'sessions#create'
-    delete '/logout' => 'sessions#destroy'
+    # get "snails" => "snails#index", as: :snails
+    
+    # get "snails/new" => "snails#new", as: :new_snail
+    # post "snails" => "snails#create"
+    #    get "snails/:id" => "snails#show", as: :show
+    # get "/snails/:id/edit" => "snails#edit", as: :edit
+    # patch "snails/:id" => "snails#update"
+    # get '/login'     => 'sessions#new'
+    # post '/login'    => 'sessions#create'
+    # delete '/logout' => 'sessions#destroy'
+
 
     root "sessions#new"
   # The priority is based upon order of creation: first created -> highest priority.

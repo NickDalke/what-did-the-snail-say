@@ -16,6 +16,8 @@ class SnailsController < ApplicationController
       render :new
     end
   end
+  def play
+  end
   def edit
   	@snail = Snail.find(params[:id])
   end

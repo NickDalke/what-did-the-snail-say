@@ -1,9 +1,15 @@
-
-<h1>Users</h1>
-<ul>
+<h1>Snails</h1>
+<tbody>
   <% @snails.each do |snail| %>
-    <li><%= snail.name %></li>
+    <tr>
+    	<td><%= snail.name %></td>
+    	<td><%= link_to 'Show', snail_path(snail) %></td>
+    	<td><%= link_to 'Edit', edit_snail_path(snail) %></td> 
+    	<br>
+    	<br>
+    </tr>
   <% end %>
-</ul>
-
-<%= link_to 'Log Out', logout_path, method: :delete %>
+</tbody>
+<br>
+<br>
+<%= link_to 'Log Out', logout_path, method: :delete %> 
