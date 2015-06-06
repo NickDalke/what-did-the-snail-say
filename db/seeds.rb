@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Snail.create([{name: "Blaise", location: "table", gender: "follow the markdown", spirit_animal: "dog", greatest_accomplishment: "dog",},])
+ Comment.create([
+ {body: "Thanks!", snail_id: 1 },
+ {body: "Thanks!", snail_id: 2 },
+ {body: "Thanks!", snail_id: 1 }])

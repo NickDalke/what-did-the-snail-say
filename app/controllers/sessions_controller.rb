@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   def new
   end
 
-
   def create
       user = Snail.find_by(name: params[:login][:name])
     if user && user.authenticate(params[:login][:password])

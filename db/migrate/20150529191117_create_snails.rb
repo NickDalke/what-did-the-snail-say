@@ -4,10 +4,8 @@ class CreateSnails < ActiveRecord::Migration
       t.string :name
       t.string :gender
       t.string :location
-      t.string :spirit
-      t.string :animal
-      t.string :greatest
-      t.string :accomplishment
+      t.string :spirit_animal
+      t.string :greatest_accomplishment
       t.string :password_digest
 
       t.timestamps

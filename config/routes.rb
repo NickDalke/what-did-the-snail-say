@@ -1,17 +1,32 @@
 Rails.application.routes.draw do
 
-    get "/snails" => "snails#index", as: :snails
-    post "/snails" => "snails#create"
-    get "/snails/new" => "snails#new", as: :new_snail
-    get "/snails/:id/edit" => "snails#edit", as: :edit_snail
-    get "/snails/:id" => "snails#show",  as: :snail
-    patch "/snails/:id" => "snails#update"
-    put "/snails/:id" => "snails#update"
-    delete "/snails/:id" => "snails#destroy"
+
+    # get "/snails/:snail_id/comments" => "comments#index"
+    # post "/snails/:snail_id/comments" => "comments#create", as: :create_comment
+    # get "/snails/:snail_id/comments/new" => "comments#new", as: :new_comments
+    # get "/snails/:snail_id/comments/:id/edit" => "comments#edit", as: :edit_comment
+    # get "/snails/:snail_id/comments/:id" => "comments#show", as: :snail_comments
+    # patch "/snails/:snail_id/comments" => "comments#update"
+    # put "/snails/:snail_id/comments/:id" => "comments#update", as: :update_comment
+    # delete "/snails/:snail_id/comments/:id" => "comments#destroy", as: :destroy_comment
+
+    # get "/snails" => "snails#index", as: :snails
+    # post "/snails" => "snails#create" 
+    # get "/snails/new" => "snails#new", as: :new_snail
+    # get "/snails/:id/edit" => "snails#edit", as: :edit_snail
+    # get "/snails/:id" => "snails#show",  as: :snail
+    # patch "/snails/:id" => "snails#update"
+    # put "/snails/:id" => "snails#update"
+    # delete "/snails/:id" => "snails#destroy"
+
     get "/login" => "sessions#new",  as: :login
     post "/login" => "sessions#create"  
     delete "/logout" => "sessions#destroy", as: :logout
 
+
+    resources :snails do
+       resources :comments
+     end
     # get "snails" => "snails#index", as: :snails
     
     # get "snails/new" => "snails#new", as: :new_snail

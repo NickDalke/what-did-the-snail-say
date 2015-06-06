@@ -11,19 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529191117) do
+ActiveRecord::Schema.define(version: 20150605003657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "snail_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["snail_id"], name: "index_comments_on_snail_id", using: :btree
 
   create_table "snails", force: true do |t|
     t.string   "name"
     t.string   "gender"
     t.string   "location"
-    t.string   "spirit"
-    t.string   "animal"
-    t.string   "greatest"
-    t.string   "accomplishment"
+    t.string   "spirit_animal"
+    t.string   "greatest_accomplishment"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"

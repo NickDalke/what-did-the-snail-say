@@ -1,5 +1,23 @@
 <h1><%= @snail.name %></h1>
 
-This <%= @snail.gender %> snail is called <%= @snail.name %>. It's spirit animal is a <%= @snail.animal %>, it can be found in the <%= @snail.location %> and its greatest accomplishment is <%= @snail.greatest %>. 
+This <%= @snail.gender %> snail is called <%= @snail.name %>. It's spirit animal is a <%= @snail.spirit_animal %>, it can be found in the <%= @snail.location %> and its greatest accomplishment is <%= @snail.greatest_accomplishment %>. 
 
+<% @snail.comments.each do |comment| %>
+	<br>
+	<%= comment.body %>
+	<br>
+	<%= link_to "Delete", @comment, method: :delete, data: {confirm: "Are you sure?"} %> 
+	<%= link_to "Edit", snails_path %> 
+<% end %> 
+
+	<h2>Add a comment:</h2>
+<%= form_for([@snail, @snail.comments.build]) do |f| %>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 <%= link_to "Back to the list!", snails_path %>
