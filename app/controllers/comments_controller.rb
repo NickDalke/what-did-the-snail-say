@@ -4,9 +4,12 @@ class CommentsController < ApplicationController
 
 	def index
 		@comments = Comment.all
+		@snail = Snail.find(params[:snail_id]) 
 	end
 
 	def show
+		@comment = Comment.find(params[:id]) 
+		@snail = Snail.find(params[:snail_id]) 
 	end
 
 	def new
@@ -14,6 +17,8 @@ class CommentsController < ApplicationController
 	end
 
 	def edit
+		@comment = Comment.find(params[:id])
+		@snail = Snail.find(params[:snail_id]) 
 	end
 
 	def create
@@ -32,9 +37,11 @@ class CommentsController < ApplicationController
 	end
 
 	def update
+	 	@comment = Comment.find(params[:id])
+		@snail = Snail.find(params[:snail_id])
 		respond_to do |format| 
-			if @comment.save
-		        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+			if @comment.update_attributes(comment_params)
+		        format.html { redirect_to snail_comment_path(@snail, @comment), notice: 'Comment was successfully created.' }
 		        format.json { render :show, status: :created, location: @comment }
 		    else
 		        format.html { render :new }
@@ -57,7 +64,7 @@ class CommentsController < ApplicationController
 	end 
 
 	def comment_params
-  		params.require(:comment).permit(:commenter, :body, :post_id)
+  		params.require(:comment).permit(:body)
 	end
 	
 end

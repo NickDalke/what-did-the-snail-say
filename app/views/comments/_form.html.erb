@@ -1,4 +1,4 @@
-<%= form_for ([@snail, @snails.comments.build]) do |f| %>
+<%= form_for [@comment.snail, @comment] do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -16,8 +16,8 @@
     <%= f.text_area :body %>
   </div>
   <div class="field">
-    <%= f.label :post_id %><br>
-    <%= f.text_field :post_id %>
+    <%= f.label :snail_id %><br>
+    <%= f.text_field :snail_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

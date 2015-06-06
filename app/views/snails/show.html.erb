@@ -7,7 +7,7 @@ This <%= @snail.gender %> snail is called <%= @snail.name %>. It's spirit animal
 	<%= comment.body %>
 	<br>
 	<%= link_to "Delete", @comment, method: :delete, data: {confirm: "Are you sure?"} %> 
-	<%= link_to "Edit", snails_path %> 
+	<%= link_to "Edit", edit_snail_comment_path(@snail, comment) %> 
 <% end %> 
 
 	<h2>Add a comment:</h2>
@@ -20,4 +20,4 @@ This <%= @snail.gender %> snail is called <%= @snail.name %>. It's spirit animal
     <%= f.submit %>
   </p>
 <% end %>
-<%= link_to "Back to the list!", snails_path %>
+<%= link_to "Back to the list!", snails_path %> 
