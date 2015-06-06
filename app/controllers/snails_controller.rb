@@ -9,7 +9,7 @@ class SnailsController < ApplicationController
     @snail = Snail.new
   end
   def create
-    @snail = Snail.new(@snail_params)
+    @snail = Snail.new(snail_params)
     if @snail.save
       redirect_to snails_path
     else
@@ -23,7 +23,7 @@ class SnailsController < ApplicationController
   end
   def update
   	@snail = Snail.find(params[:id])
-  	if @snail.update_attributes(user_params)
+  	if @snail.update_attributes(snail_params)
   		redirect_to snails_path
 	  else
 		  render :edit
@@ -37,7 +37,7 @@ class SnailsController < ApplicationController
   end
 
   private
-  def user_params
+  def snail_params
     params.require(:snail).permit(:name, :gender, :location, :spirit_animal, :greatest_accomplishment, :password, :password_confirmation)
   end
 end 
