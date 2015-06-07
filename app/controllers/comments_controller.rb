@@ -51,9 +51,11 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
+		@comment = set_comment
+		@snail = Snail.find(params[:snail_id])
 		@comment.destroy
 		respond_to do |format|
-      		format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      		format.html { redirect_to snail_path(@snail), notice: 'Comment was successfully destroyed.' }
       		format.json { head :no_content }
     	end
     end
