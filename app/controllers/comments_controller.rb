@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
 		@snail = Snail.find(params[:snail_id])
 		respond_to do |format| 
 			if @comment.update_attributes(comment_params)
-		        format.html { redirect_to snail_comment_path(@snail, @comment), notice: 'Comment was successfully created.' }
+		        format.html { redirect_to snail_path(@snail), notice: 'Comment was successfully created.' }
 		        format.json { render :show, status: :created, location: @comment }
 		    else
 		        format.html { render :new }

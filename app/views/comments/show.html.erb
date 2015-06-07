@@ -13,8 +13,6 @@
     <%= @comment.body%>
       <tr>
         <td><%= link_to 'Show', snail_comment_path(@snail, @comment)%></td>
-        <td><%= link_to 'Edit', edit_snail_comment_path(@snail, @comment) %></td>
-        <td><%= link_to 'Destroy', snail_comment_path(@snail, @comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   </tbody>
 </table>
