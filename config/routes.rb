@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     delete "/snails/:snail_id/comments/:id" => "comments#destroy"
 
     get "/snails" => "snails#index", as: :snails
+    get "/snails/play" => "snails#play", as: :snail_play 
     post "/snails" => "snails#create" 
     get "/snails/new" => "snails#new", as: :new_snail
     get "/snails/:id/edit" => "snails#edit", as: :edit_snail

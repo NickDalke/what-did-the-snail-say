@@ -1,0 +1,94 @@
+<h1>Play!</h1>
+	<br>
+	<%= "Who sing good?" %> 
+	<%= form_tag snail_play_path, :method => 'get' do %>
+    <%= text_field_tag :good_singer, params[:good_singer] %>
+    <%= submit_tag "Submit", :name => nil %>
+<% end %>
+<br>
+	<%= params[:good_singer] + " sucks," + " you suck." if params[:good_singer] %>
+
+	<br> 
+	<br> 
+	<br>
+	<br>
+
+	<%= "What you want to be from kid?" %> 
+	<%= form_tag snail_play_path, :method => 'get' do %>
+    <%= text_field_tag :goal, params[:goal] %>
+    <%= submit_tag "Submit", :name => nil %>
+    <% end %>
+    <br> 
+	<%= params[:goal] + ", hahaha."  if params[:goal] %> 
+
+	<br> 
+	<br> 
+	<br>
+	<br>
+
+	<%= "Can hula hoop?" %> 
+	<%= form_tag snail_play_path, :method => 'get' do %>
+    <%= text_field_tag :hula, params[:hula] %>
+    <%= submit_tag "Submit", :name => nil %>
+    <% end %>
+    <br> 
+	<%= params[:hula] + ". You bet you fat ass can you hula hoop." if params[:hula] %> 
+
+	<%#= "What you favorite movie?" %> 
+	<%#= form_tag snail_play_path, :method => 'get' do %>
+    <%#= text_field_tag :movie, params[:movie] %>
+    <%#= submit_tag "Submit", :name => nil %>
+    <%# end %>
+
+	<%#= "No" %>
+	<%#= "What you favorite movie?" %>
+	<%#= form_tag snail_play_path, :method => 'get' do %>
+    <%#= text_field_tag :movie2, params[:movie2] %>
+    <%#= submit_tag "Submit", :name => nil %>
+    <%# end %>
+
+	<%#= "No" %>
+	<%#= "What you favorite movie? Hint: (Jurrasic Park)" %>
+	<%#= form_tag snail_play_path, :method => 'get' do %>
+    <%#= text_field_tag :movie3, params[:movie3] %>
+    <%#= submit_tag "Submit", :name => nil %>
+    <%# end %>
+
+	<%# until :movie3 == "Jurrasic Park" %>
+	<%#= "What you favorite movie? Hint: (Jurrasic Park)" %>
+	<%#= form_tag snail_play_path, :method => 'get' do %>
+    <%#= text_field_tag :movie3, params[:movie3] %>
+    <%# end %>
+
+    <%#= submit_tag "Submit", :name => nil %>
+		<%# if :movie3 == "Jurrasic Park" %>
+<!-- 			Whatever. This changes nothing between us.
+ -->		<%# end %>
+	<%# end %>
+
+	<br> 
+	<br> 
+	<br>
+	<br>
+
+	<%= "You body shame?" %> 
+	<%= form_tag snail_play_path, :method => 'get' do %>
+    <%= text_field_tag :body, params[:body] %>
+    <%= submit_tag "Submit", :name => nil %> 
+    <br> 
+	<%= params[:body] + ". You sound as girl." if params[:body]%> 
+	<% end %>
+
+
+	<br> 
+	<br> 
+	<br>
+	<br>
+
+	<%="You trust guy next to you?" %> 
+	<%= form_tag snail_play_path, :method => 'get' do %>
+	    <%= text_field_tag :tr, params[:tr] %>
+	    <%= submit_tag "Submit", :name => nil %>
+	    <br> 
+		<%= params[:tr] + ". No more question you go now damn guy." if params[:tr]%> 
+	<% end %>

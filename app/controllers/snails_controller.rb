@@ -16,8 +16,6 @@ class SnailsController < ApplicationController
       render :new
     end
   end
-  def play
-  end
   def edit
   	@snail = Snail.find(params[:id])
   end
@@ -35,12 +33,8 @@ class SnailsController < ApplicationController
     @snail.destroy
     redirect_to snails_path
   end
-
   private
   def snail_params
     params.require(:snail).permit(:name, :gender, :location, :spirit_animal, :greatest_accomplishment, :password, :password_confirmation)
   end
 end 
-
-
-
